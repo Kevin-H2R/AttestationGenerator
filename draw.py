@@ -27,7 +27,7 @@ deltaY = (fontSize / 2) + 4
 checkboxX = 58
 checkedHeight = [493, 583, 636, 675, 729]
 
-checkedByUser = sys.argv[8]
+checkedByUser = int(sys.argv[8])
 
 img = Image.open("img.jpeg")
 draw = ImageDraw.Draw(img)
