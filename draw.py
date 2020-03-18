@@ -1,7 +1,7 @@
 from PIL import Image
 from PIL import ImageFont
-from PIL import ImageDraw 
-
+from PIL import ImageDraw
+import sys
 
 nameX = 160
 nameY = 262
@@ -38,12 +38,12 @@ smallFont = ImageFont.truetype("fonts/otto.ttf", fontSize // 2)
 crossFont = ImageFont.truetype("fonts/alanis.ttf", fontSize + 12)
 signatureFont = ImageFont.truetype("fonts/arty.otf", fontSize + 12)
 # draw.text((x, y),"Sample Text",(r,g,b))
-draw.text((nameX, nameY - deltaY),"Hubert Bonisseur de la Bath",(10,10,10),font=font)
-draw.text((bornX, bornY - deltaY),"06-05-1927",(10,10,10),font=font)
-draw.text((liveX, liveY - deltaY),"10 rue de la Paix, Paris",(10,10,10),font=font)
-draw.text((checkboxX, checkedHeight[checkedByUser] - deltaY),"X",(10,10,10),font=crossFont)
-draw.text((doneAtX, doneAtY - 3),"Paris",(10,10,10),font=smallFont)
-draw.text((dayX, doneAtY - deltaY),"17",(10,10,10),font=font)
-draw.text((monthX, doneAtY - deltaY),"03",(10,10,10),font=font)
-draw.text((signatureX, signatureY),"Hubert BdlB",(10,10,10),font=signatureFont)
+draw.text((nameX, nameY - deltaY), sys.argv[1] + " " + sys.argv[2], (10,10,10), font=font)
+draw.text((bornX, bornY - deltaY), sys.argv[3], (10, 10, 10), font=font)
+draw.text((liveX, liveY - deltaY), sys.argv[4], (10, 10,10), font=font)
+draw.text((checkboxX, checkedHeight[checkedByUser] - deltaY), "X", (10, 10, 10), font=crossFont)
+draw.text((doneAtX, doneAtY - 3), sys.argv[5], (10, 10, 10), font=smallFont)
+draw.text((dayX, doneAtY - 10), sys.argv[6], (10, 10, 10), font=font)
+draw.text((monthX, doneAtY - 10), sys.argv[7], (10, 10, 10), font=font)
+draw.text((signatureX, signatureY), sys.argv[8], (10, 10, 10), font=signatureFont)
 img.save('attestation.jpg')
